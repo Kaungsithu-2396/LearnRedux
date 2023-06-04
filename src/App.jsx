@@ -1,10 +1,12 @@
 import "./App.css";
-import Todo from "./components/todo";
+import Todo from "./app/features/ToDo/Todo";
 function App() {
     return (
         <>
             <h1>Welcome to Redux Lesson</h1>
-            <Todo />
+            <div className="">
+                <Todo />
+            </div>
         </>
     );
 }
