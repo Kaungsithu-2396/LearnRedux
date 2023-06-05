@@ -9,11 +9,7 @@ function Todo() {
         setTask(e.target.value);
     };
     const addTaskHandler = () => {
-        dispatch(
-            add({
-                title: task,
-            })
-        );
+        dispatch(add(task));
         setTask("");
     };
     const delTaskHandler = (id) => {

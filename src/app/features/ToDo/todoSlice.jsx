@@ -1,16 +1,22 @@
-import { createSlice, isAsyncThunkAction } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 const initialState = [];
 const taskReducer = createSlice({
     name: "todo",
     initialState,
     reducers: {
-        add: (state, action) => {
-            const todo = {
-                id: Date(),
-                task: action.payload.title,
-                done: false,
-            };
-            return [...state, todo];
+        add: {
+            reducer: (state, action) => {
+                state.push(action.payload);
+            },
+            prepare(title) {
+                return {
+                    payload: {
+                        id: nanoid(),
+                        task: title,
+                        done: false,
+                    },
+                };
+            },
         },
         delTask: (state, action) => {
             return state.filter((el) => el.id !== action.payload.id);

@@ -1,11 +1,12 @@
 import "./App.css";
-import Todo from "./app/features/ToDo/Todo";
+
+import Post from "./app/features/Posts__/Post";
 function App() {
     return (
         <>
             <h1>Welcome to Redux Lesson</h1>
             <div className="">
-                <Todo />
+                <Post />
             </div>
         </>
     );
